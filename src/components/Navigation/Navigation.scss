@@ -1,0 +1,127 @@
+/* eslint-disable */
+
+.cl__header{
+    background-color: $eyOffWhite;
+    color: $eyOffBlack;
+    padding-left: 1rem;
+    position: relative;
+    height: 5rem;
+
+    @include mq($from: desktop){
+        padding-left: 1rem;
+        height: 100px;
+        position: fixed;
+        width: 100%;
+        z-index: 250;
+        display: flex;
+    }
+}
+
+.cl__logo-cont{
+    display: inline-flex;
+    padding-top: 34px;
+    color: $eyOffBlack !important;
+    @include fontSize(18px);
+    width: 40%;
+
+    @include mq($from: desktop){
+        padding-top: 20px;
+    }
+}
+
+.cl__ey-logo{
+    width: 62px;
+    height: auto;
+    display: block;
+    margin-left: 10px;
+    margin-top: -20px;
+    margin-right: 40px;
+    background-image: url(../../assets/Images/ey-logo-black-new.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.cl__home-heading{
+    margin: 0;
+
+    @include mq($from: desktop){
+        position:unset;
+        padding-top: 5px;
+        @include fontSize(38px);
+        margin-left: -10px;
+        color: $eyOffBlack !important;
+    }
+    
+}
+
+.cl__header-bottom{
+    width:  60%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 34px;
+}
+
+.cl__navBar-list{
+    list-style: none;
+    display: flex;
+
+    &--item{
+        margin-right: 2.5rem;
+        @include mq($from: desktopMid){
+            margin-right: 2.5rem;
+        }
+        &:hover{
+            cursor: pointer;
+            .cl__navBar-hover{
+                width: 100%;
+                border-top: 2px solid $eyOffBlack;
+            }
+        }
+    }
+}
+
+.cl__navBar-link{
+    color: $eyOffBlack !important;
+    @include fontSize(18px);
+    font-family: EYInterstate-Light, sans-serif !important;
+    @include mq($from: desktopMid){
+        @include fontSize(20px);
+    }
+    @include mq($from: desktopWide){
+        @include fontSize(22px);
+    }
+}
+
+.cl__navbar-yammer-img{
+    width: 79px;
+    margin-top: -4px;
+}
+
+.cl__navBar-hover{
+    margin-top: -3px;
+    width: 0;
+    border-top: 1px solid transparent;
+    transition: .6s;
+}
+
+.dark-bg{
+    background-color: $eyOffBlack !important; 
+}
+
+.mobile-heading{
+    color: $eyOffWhite !important;
+    position: absolute;
+    top: 18px;
+    right: 45px;
+    @include mq($from: desktop){
+        top: 0;
+    }
+}
+
+.mobile-logo{
+    width: 45px;
+    height: 45px;
+    background-image: url(../../assets/Images/ey-logo-light.png);
+}
+

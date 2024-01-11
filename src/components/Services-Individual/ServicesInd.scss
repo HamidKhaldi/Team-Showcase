@@ -1,0 +1,248 @@
+.cl__services-ind-wrapper{
+    @include mq($from: desktop){
+        padding-top: 6rem;
+    }
+}
+
+.cl__services-ind-hero-cont{
+    width: 100%;
+    background-color: $eyOffBlack;
+    display: flex;
+    flex-wrap: wrap;
+
+    @include mq($from: desktop){
+        height: 20rem;
+    }
+    
+}
+
+.cl__services-ind-hero-intro{
+    flex-basis: 100%;
+    color: $eyOffWhite;
+    padding: 2rem 3rem;
+
+    @include mq($from: tablet){
+        height: 100%;
+        padding: 3rem 4rem 4rem 6rem;
+    }
+
+    @include mq($from: desktop){
+        flex-basis: 70%;
+        padding-right: 4rem;
+    }
+}
+
+.cl__services-ind-hero-heading{
+    color: $eyYellow;
+    @include fontSize(16px);
+    margin-bottom: 1rem;
+}
+
+.cl__services-ind-hero-para{
+    @include fontSize(24px);
+    line-height: 1.2;
+}
+
+.cl__services-ind-hero-img-cont{
+    flex-basis: 100%;
+
+    @include mq($from: desktop){
+        flex-basis: 30%;
+        height: 100%;
+    }
+}
+
+.cl__services-ind-hero-img{
+    width: 100%;
+    height: auto;
+}
+
+.cl__services-ind-main-cont{
+    background-color: $eyOffWhite;
+    padding: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+
+    @include mq($from: desktop){
+        min-height: 62vh;
+        padding: 4rem 6rem;
+    }
+}
+
+.cl__services-ind-main-para{
+    flex-basis: 100%;
+    // height: 16rem;
+
+    @include mq($from: desktop){
+        flex-basis: 50%;
+        padding: 3rem 3rem 3rem 0;
+        @include fontSize(18px);
+        line-height: 1.3;
+    }
+}
+
+.cl__services-ind-main-img-cont{
+    @include mq($from: tablet){
+        background-size: cover;
+    }
+    
+    @include mq($from: desktop){
+        flex-basis: 50%;
+    }
+}
+
+.cl__services-ind-main-video-cont{
+    flex-basis: 100%;
+    @include mq($from: desktop){
+        flex-basis: 50%;
+        padding-top: 3rem;
+    }
+}
+
+.cl__services-ind-main-img{
+    width: 100%;
+    height: auto;
+}
+
+.cl__services-ind-main-video {
+    width: 100%;
+    height: auto;
+}
+
+.cl__services-ind-project-cont{
+    flex-basis: 100%;
+    padding-top: 4rem;
+}
+
+.cl__services-ind-projects-heading{
+    @include fontSize(20px);
+    margin-bottom: 1rem;
+}
+
+.cl__services-ind-projects-list{
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+    &--item{
+        position: relative;
+        flex-basis: 100%;
+        margin-bottom: 2rem;
+        
+        @include mq($from: tablet){
+            flex-basis: 48%;
+            margin-right: 2%;
+            margin-bottom: 4rem;
+        }
+
+        @include mq($from: desktop){
+            flex-basis: 24%;
+            margin-right: 1%;
+
+            &:hover{
+                .cl__services-ind-projects-list--about-cont{
+                    opacity: 1;
+                }
+            }
+        } 
+    }
+
+    &--link {
+        width:  100%;
+        height:  auto;
+        display:  block;
+    }
+
+    &--about-cont{
+        width: 160px;
+        position: absolute;
+        padding: 10px 10px 10px 20px;
+        top: 25%;
+        left: 28.5%;
+        text-decoration: none;
+        background-color: transparentize($eyOffBlack, .2);
+        color: $eyOffWhite;
+        @include fontSize(16px);
+        border-radius: 2px;
+        transition: .5s;
+
+        @include mq($from: desktop){
+            opacity: 0;  
+            padding: 10px 10px 10px 20px;
+            &:hover{
+                color: $eyOffWhite;    
+            }      
+        }
+
+        @include mq($from: desktopMid){
+            left: 16%;
+        }
+
+        @include mq($from: desktopWide){
+            width: 170px;
+            left: 21.5%;
+            top:  29%;
+        }
+
+        @include mq($from: desktopXL){
+            left: 28.5%;
+            top: 34%;
+        }
+
+    }
+
+    &--img{
+        width: 100%;
+        height: auto;
+    }
+
+    &--arrow-img{
+        width: 20px;
+        margin-left: 20px;
+
+        @include mq($from: desktopWide){
+            margin-left: 26px;
+        }
+    }
+
+    &--title{
+        color: $eyOffBlack;
+        margin-top: 5px;
+    }
+
+}
+
+.cl__services-back-link-cont{
+    width: 100%;
+    margin: 0 auto 4rem;
+    text-align: center;
+    @include mq($from: desktop){
+        margin: 2rem auto 0;
+    }
+}
+
+.cl__services-back-link{
+    text-decoration: none;
+    color: $eyOffBlack;
+
+    &:hover{
+        text-decoration: none;
+        color: $eyOffBlack;
+    }
+}
+
+.cl__services-back-link-img{
+    transform: rotate(90deg);
+    width: 15px;
+    margin-right: 10px;
+}
+
+.animate__animated.animate__fadeInUpBig {
+    @for $x from 1 through 4 {
+        &:nth-child(#{$x}) {
+          animation-delay: 200ms * ($x - 1);
+        }
+    }
+}

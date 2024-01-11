@@ -1,0 +1,19 @@
+@import "../scss/_third-party/sass-mq";
+
+$mq-responsive: true;
+
+$mq-breakpoints: (
+    mobile:  320px,
+    midMobile: 480px,
+    tablet:  740px,
+    desktop: 	980px,
+    desktopMid:    1135px,
+    desktopWide:    1400px,
+    desktopXL:    1800px
+);
+
+$mq-static-breakpoint: desktop;
+$mq-show-breakpoints: (mobile, midMobile, tablet, desktop, desktopMid, desktopWide, desktopXL); 
+
+
+ 

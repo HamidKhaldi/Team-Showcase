@@ -1,0 +1,60 @@
+<div class="cl__project-wrapper animate__animated animate__fadeInLeftBig">
+    <div class="cl__project-hero-cont">
+        <div class="cl__project-hero-intro">
+            <h1 class="cl__project-hero-heading">{{selectedService}}</h1>
+            <h1 class="cl__project-hero-title">{{selectedProject.Title}}</h1>
+            <div class="cl__project-hero-para">{{selectedProject.Project_x002d_Client}}</div>
+        </div>
+        <div class="cl__project-hero-img-cont">
+            <img :src="selectedProject.Project_x002d_Banner ? selectedProject.Project_x002d_Banner.Url : null" alt="{{selectedProject.Title}}" class="cl__project-hero-img">
+        </div>
+    </div>
+    <div class="cl__project-main-cont">
+        <div class="cl__project-main-intro-cont">
+            <h2 class="cl__project-main-intro-heading">The Ask</h2>
+            <div class="cl__project-main-intro-para" v-html="selectedProject.The_x002d_Ask"></div>
+            <div class="cl__project-main-view-cont">
+                <a v-if="selectedProject.Project_x002d_Link" :href="selectedProject.Project_x002d_Link ? selectedProject.Project_x002d_Link.Url : null" target="_blank" class="cl__project-main-view-link">View project</a>
+            </div>
+        </div>
+        <div class="cl__project-highlights-cont">
+            <h4 class="cl__project-highlights-heading">What Creative UK did:</h4>
+            <p class="cl__project-highlights-para" v-html="selectedProject.Highlights"></p>
+        </div>
+        <ul class="cl__project-list">
+            <li class="cl__project-list--item" v-if="selectedProject.Image_x002d_1">
+                <img :src="selectedProject.Image_x002d_1 ? selectedProject.Image_x002d_1.Url : null" alt="image 1" class="cl__project-list--img">
+            </li>
+            <li class="cl__project-list--item cl__project-list--quote-item" v-if="selectedProject.Quote_x002d_Content">           
+                <p class="cl__project-list--quote-para" v-html="selectedProject.Quote_x002d_Content"></p>
+                <p class="cl__project-list--quote-author" v-html="selectedProject.Quote_x002d_Author"></p>
+            </li>
+            <li class="cl__project-list--item" v-if="!selectedProject.Quote_x002d_Content">
+                <img :src="selectedProject.Image_x002d_4 ? selectedProject.Image_x002d_4.Url : null" alt="image 4" class="cl__project-list--img">
+            </li>
+            <li class="cl__project-list--item" v-if="selectedProject.Image_x002d_2">
+                <img :src="selectedProject.Image_x002d_2 ? selectedProject.Image_x002d_2.Url : null" alt="image 2" class="cl__project-list--img">
+            </li>
+            <li class="cl__project-list--item" v-if="selectedProject.Image_x002d_3">
+                <img :src="selectedProject.Image_x002d_3 ? selectedProject.Image_x002d_3.Url : null" alt="image 3" class="cl__project-list--img">
+            </li>
+        </ul>
+        <ul class="cl__project-tag-list">
+            <li v-for="keyword in selectedProject.keywordNamesArr" class="cl__project-tag-list--item">{{keyword}}</li>
+        </ul>
+    </div>
+    <div class="cl__project-back-link-cont">
+        <router-link v-if="selectedRoute == 'showcase'" to="/showcase" class="cl__project-back-link">
+            <img src="../../assets/Images/arrow-black.png" alt="arrow left" class="cl__project-back-link-img">
+            <span class="cl__project-back-link-span">Back to Showcase</span>
+        </router-link>
+        <router-link v-if="selectedRoute == 'service'" :to="{name: 'ServicesInd', params: {title: selectedService}}" class="cl__project-back-link">
+            <img src="../../assets/Images/arrow-black.png" alt="arrow left" class="cl__project-back-link-img">
+            <span class="cl__project-back-link-span">Back to {{selectedService}}</span>
+        </router-link>
+        <router-link v-if="selectedRoute == 'services'" to="/services" class="cl__project-back-link">
+            <img src="../../assets/Images/arrow-black.png" alt="arrow left" class="cl__project-back-link-img">
+            <span class="cl__project-back-link-span">Back to Capabilities</span>
+        </router-link>
+    </div>
+</div>

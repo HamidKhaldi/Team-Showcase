@@ -1,0 +1,65 @@
+<div class="cl__contact-wrapper">
+    <div class="cl__contact-hero-cont">
+        <h1 class="cl__contact-hero-heading">Contact Us</h1>
+        <div class="cl__contact-hero-img-cont">
+            <img src="../../assets/Images/services.png" alt="" class="cl__contact-hero-img">
+        </div>
+        <p class="cl__contact-hero-intro-para animate__animated animate__fadeInUp" v-html="taglineData.Tagline"></p>       
+    </div>
+    <div class="cl__contact-main-cont">
+        <!-- <div class="go-down bounce" @click="smoothScrollTo('#scrollDiv')">
+            <font-awesome-icon class="cl__scroll-down-icon" icon="angle-right"></font-awesome-icon>
+        </div> -->
+        <ul class="cl__contact-list">
+            <li class="cl__contact-list--item cl__contact-list--query-item animate__animated animate__fadeInUp">
+                <div class="cl__contact-list--heading">Have a query?</div>
+                <div class="cl__contact-list--cont">
+                    <div class="cl__contact__error-cont">
+                        <ul class="cl__contact-error-list">
+                            <!-- <li v-if="v$.name.$error" class="cl__contact-error-list--item">Name: {{ v$.name.$errors[0].$message}}</li>
+                            <li  v-if="v$.email.$error" class="cl__contact-error-list--item">Email: {{v$.email.$errors[0].$message}}</li> -->
+                            <li v-if="v$.message.$error" class="cl__contact-error-list--item">Message: {{v$.message.$errors[0].$message}}</li>
+                        </ul>
+                    </div>
+                    <div class="cl__contact-list-email-form root" :class="requestClass">
+                        Hello,
+                        My name is <span class="cl__contact-list-span">{{userDetails.Name}}</span><br/> my email address is <span class="cl__contact-list-span">{{userDetails.Email}}</span><br/>and I'd like to discuss <textarea v-model="state.message" placeholder="[your requirements]" class="cl__contact-list--textarea"></textarea>
+                    </div>
+                    <a @click="submitRequest" :class="requestClass" class="cl__contact-list--send-btn">Send</a>
+                </div>
+                <div class="cl__contact-success-cont" :class="successClass">
+                    Your query has been submitted!
+                </div>
+            </li>
+            <li class="cl__contact-list--item cl__contact-list--polaris-item animate__animated animate__fadeInUp">
+                <div class="cl__contact-list--heading">Know what you need?</div>
+                <div class="cl__contact-list--cont">
+                    <a href="https://eygb.sharepoint.com/sites/CreativeWorkflow/UK/SitePages/Creative-Workflow.aspx/home" target="_blank" class="cl__contact-list--polaris-btn ">Submit a job on Polaris</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div id="scrollDiv" class="cl__contact-footer-cont animate__animated animate__fadeInUp">
+        <div class="cl__contact-leadership-cont" :class="showList">
+        <a class="cl__contact-leadership-link">
+            Contacts
+            <!-- <font-awesome-icon v-if="!listOpen" :icon="['fa', 'angle-right']" class="cl__contact-leadership-icon"></font-awesome-icon>
+            <font-awesome-icon v-if="listOpen" :icon="['fa', 'times']" class="cl__contact-leadership-icon"></font-awesome-icon> -->
+        </a>
+        <div class="cl__contact-leadership-list-cont">
+            <ul class="cl__contact-leadership-list">
+                <li class="cl__contact-leadership-list--item" v-for="contact in contactDetailsArr">
+                    <ul class="cl__contact-leadership-details-list">
+                        <li class="cl__contact-leadership-details-list--item">{{contact.Title}}</li>
+                        <li class="cl__contact-leadership-details-list--item">{{contact.Job_x002d_Title}}</li>
+                        <li class="cl__contact-leadership-details-list--item">
+                            <a :href="'mailto:' + contact.Email" class="cl__contact-leadership-details-list--email">{{contact.Email}}</a>
+                        </li>
+                        <li class="cl__contact-leadership-details-list--item">{{contact.Phone_x002d_Number}}</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        </div>
+    </div>    
+</div>

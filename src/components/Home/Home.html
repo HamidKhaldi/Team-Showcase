@@ -1,0 +1,17 @@
+<div class="homepage-container" id="cl_Wrapper">
+    <div id="heroCont" class="cl__home-hero-cont">
+       <video id="clHomeVideo" controls autoPlay muted class="cl__home-hero-video" src="siteUrlAsset%20Library/Stinger-assets/stinger.mp4"></video>
+    </div>
+    <a id="playVideo" type="btn"></a>
+    <div class="cl__home-intro-cont">
+        <div class="cl__home-intro-inner"> 
+            <div  id="scrollDiv" class="cl__home-intro-para animate__animated animate__bounceInLeft" v-html="aboutData.Tagline"></div>
+        </div>
+        <div class="cl__home-intro-inner--border">
+            <div class="cl__home-intro-para animate__animated animate__bounceInRight" v-html="aboutData.Further_x002d_Intro"></div>
+        </div>
+         <div class="go-down bounce" @click="smoothScrollTo('#scrollDiv')">
+            <font-awesome-icon class="cl__scroll-down-icon" icon="angle-right"></font-awesome-icon>
+        </div>
+     </div>
+</div>

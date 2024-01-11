@@ -1,0 +1,314 @@
+.cl__project-wrapper{
+    padding-bottom: 4rem;
+
+    @include mq($from: desktop){
+        padding-top: 6rem;
+        padding-bottom: 3rem;
+    }
+}
+
+.cl__project-hero-cont{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.cl__project-hero-intro{
+    flex-basis: 100%;
+    background-color: $eyOffBlack;
+    color: $eyOffWhite;
+    padding: 1rem 1.5rem 2rem;
+    position: relative;
+
+    @include mq($from: desktop){
+        flex-basis: 65%;
+        padding: 2rem 3rem 2rem 3rem;
+    }
+    @include mq($from: desktopMid){
+        padding: 4rem 6rem 2rem 8rem;
+    }
+    
+}
+
+.cl__project-hero-heading{
+    color: $eyYellow;
+    font-family: EYInterstate-Light, sans-serif;
+    @include fontSize(16px);
+    margin-bottom: 1rem;
+}
+
+.cl__project-hero-title{
+    font-family: EYInterstate-Light, sans-serif;
+    @include fontSize(36px);
+    margin-bottom: 10px;
+}
+
+.cl__project-hero-para{
+    color: #c4c4cc;
+    @include fontSize(18px);
+    font-family: EYInterstate-Light, sans-serif;
+}
+
+.cl__project-hero-img-cont{
+    flex-basis: 100%;
+
+    @include mq($from: desktop){
+        flex-basis: 35%;
+    }
+}
+
+.cl__project-hero-img{
+    width: 100%;
+    height: auto;
+
+    @include mq($from: desktop){
+        width: 135%;
+        margin-left: -20%;
+    }
+    @include mq($from: desktopMid){
+        width: 150%;
+        margin-left: -25%;
+    }
+    @include mq($from: desktopWide){
+        width: 120%;
+        margin-left: -10%;
+    }
+}
+
+.cl__project-main-cont{
+    padding: 0 1.5rem 3rem;
+
+    @include mq($from: tablet){
+        padding: 0 4rem;
+    }
+    @include mq($from: desktopMid){
+        padding: 0 8rem;
+    }
+}
+
+.cl__project-main-intro-cont{
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cl__project-main-intro-heading{
+    color: $eySharkGrey;
+    @include fontSize(35px);
+    font-family: EYInterstate-Light, sans-serif;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    flex-basis: 100%;
+    @include mq($from: desktop){
+        margin-top: 4rem;
+    } 
+}
+
+.cl__project-main-intro-para{
+    color: $eyOffBlack !important;
+    font-size:  24px !important;
+    font-family: Georgia, sans-serif !important;
+    flex-basis: 100%;
+    margin-bottom: 2rem;
+
+    @include mq($from: tablet){
+        margin-bottom: 3rem;
+    }
+    @include mq($from: desktopMid){
+        margin-bottom: 0;
+    }
+
+    @include mq($from: desktop){
+        flex-basis: 75%;
+    }
+}
+
+.cl__project-main-view-cont{
+    flex-basis: 100%;
+    position: relative;
+
+    @include mq($from: tablet){
+        margin-bottom: 1rem;
+    }
+    @include mq($from: desktop){
+        flex-basis: 25%;
+        margin-bottom: 0;
+    }
+}
+
+.cl__project-main-view-link{
+    width: 182px;
+    margin: 0 auto;
+    display: block;
+    background-color: $eyOffBlack;
+    text-decoration: none;
+    text-align: center;
+    color: $eyOffWhite;
+    @include fontSize(18px);
+    font-family: EYInterstate-Light, sans-serif;
+    padding: 10px 40px;
+    border-radius: 5px;
+    position: relative;
+
+    &:hover{
+        color: $eyYellow;
+    }
+
+    @include mq($from: desktop){
+        position: absolute;
+        right: 0;
+    }
+
+}
+
+.cl__project-highlights-cont{
+    padding: 4rem 0 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    @include mq($from: desktopMid){
+        padding: 2rem 0;
+    }
+}
+
+.cl__project-highlights-heading{
+    color: $eyOffBlack;
+    font-family: EYInterstate-Light, sans-serif;
+    @include fontSize(22px);
+    padding-bottom: 0.5rem;
+    flex-basis: 100%;
+}
+
+.cl__project-highlights-para{
+    color: $eyOffBlack;
+    font-family: EYInterstate-Light, sans-serif;
+    @include fontSize(18px);
+    margin-bottom: 1.5rem;
+
+    ul {
+        color: $eyOffBlack;
+        font-family: EYInterstate-Light, sans-serif;
+        @include fontSize(18px);
+        padding: 0;
+        margin:  0;
+    }
+
+    li {
+        color: $eyOffBlack;
+        font-family: EYInterstate-Light, sans-serif;
+        @include fontSize(18px);
+    }
+}
+
+.cl__project-list{
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    @include mq($from: tablet){
+        margin-bottom: 1rem;
+    }
+
+    &--item{    
+        flex-basis: 100%;
+        margin-bottom: 2rem;
+        position: relative;
+
+        @include mq($from: desktop){
+            flex-basis: 49.5%;
+            margin-bottom: 1.5%;
+        }
+    }
+
+    &--quote-item{
+        text-align: center;
+        padding: 3rem 1.5rem;
+        @include mq($from: desktop){
+            padding: 3rem 2.5rem;
+        }
+    }
+
+    &--quote-icon{
+        width: 45px;
+    }
+
+    &--quote-para::before {
+        content: "\201C";
+        text-indent: 0;
+        color: #404040;
+        @include fontSize(110px);
+        font-family: Georgia, sans-serif;
+        line-height:  0;
+        position: absolute;
+        left:  44%;
+    }
+
+    &--quote-para{
+        color: $eyOffBlack;
+        @include fontSize(16px);
+        font-family: Georgia, sans-serif;
+        margin-top: 1rem 0 0 0;
+    }
+
+    &--quote-author{
+        color: $eyOffBlack;
+        @include fontSize(14px);
+        font-family: EYInterstate-Light, sans-serif;
+        margin: 0.2rem 0 0 0;
+    }
+
+    &--img{
+        width: 100%;
+        height: auto;
+    }
+}
+
+.cl__project-tag-list{
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    margin-bottom: 0rem;
+
+    &--item{
+        color: $eySharkGrey;
+        border: 1px solid $eySharkGrey;
+        border-radius: 3px 5px;
+        padding: 5px;
+        margin-right: 8px;
+        margin-bottom: 10px;
+    }
+    @include mq($from: tablet){
+        margin-bottom: 4rem;
+    }
+}
+
+.cl__project-back-link-cont{
+    width: 80%;
+    margin: 1rem auto 2rem;
+    text-align: center;
+    @include mq($from: tablet){
+        width: 34%;
+        margin: 1rem auto 3rem;
+    }
+    
+}
+
+.cl__project-back-link{
+    text-decoration: none;
+    color: $eyOffBlack;
+
+    &:hover{
+        text-decoration: none;
+        color: $eyOffBlack;
+    }
+}
+
+.cl__project-back-link-img{
+    transform: rotate(90deg);
+    width: 15px;
+    margin-right: 10px;
+}

@@ -1,0 +1,74 @@
+<div class="cl__services-ind-wrapper">
+    <div class="animate__animated animate__fadeInLeftBig">
+        <div class="cl__services-ind-hero-cont">
+            <div class="cl__services-ind-hero-intro">
+                <h1 class="cl__services-ind-hero-heading">{{serviceTitle}}</h1>
+                <p class="cl__services-ind-hero-para" v-html="selectedService ? selectedService.Hero_x002d_Tagline : null"></p>
+            </div>
+            <div class="cl__services-ind-hero-img-cont" v-if="selectedService.Background_x002d_Image">
+                <img :src="selectedService.Background_x002d_Image ? selectedService.Background_x002d_Image.Url : null" alt="{{serviceTitle}}" class="cl__services-ind-hero-img">
+            </div>
+        </div>
+        <div class="cl__services-ind-main-cont">
+            <p class="cl__services-ind-main-para" v-html="selectedService.Intro_x002d_Content"></p>
+            <div v-if="!selectedService.Hero_x002d_Media" class="cl__services-ind-main-img-cont">
+                <img :src="selectedService.Hero_x002d_Image ? selectedService.Hero_x002d_Image.Url : null" alt="" class="cl__services-ind-main-img">
+            </div> 
+            <div v-if="selectedService.Hero_x002d_Media" class="cl__services-ind-main-video-cont">
+                <video controls :src="selectedService.Hero_x002d_Media.Url" alt="" class="cl__services-ind-main-video"></video>
+            </div>     
+
+            <div v-if="relatedProjects.length > 0" class="cl__services-ind-project-cont">
+                <h2 class="cl__services-ind-projects-heading">Our latest projects</h2>
+                <ul class="cl__services-ind-projects-list">
+                    <li v-for="relatedProject in relatedProjects.slice(0, 4)" class="cl__services-ind-projects-list--item animate__animated animate__fadeInUpBig">
+                        <router-link @click="sendProjectData(relatedProject, serviceTitle)" :to="{name: 'Project', params: {title: relatedProject.Title}}"  class="cl__services-ind-projects-list--link">
+                            <img :src="relatedProject.Project_x002d_Thumbnail ? relatedProject.Project_x002d_Thumbnail.Url : null" alt="{{relatedProject.Title}}" class="cl__services-ind-projects-list--img">           
+                            <div class="cl__services-ind-projects-list--about-cont">
+                                <span class="cl__services-ind-projects-list--about-span">View project</span>
+                                <img src="../../assets/Images/back.png" alt="arrow right" class="cl__services-ind-projects-list--arrow-img">
+                            </div>
+                            <p class="cl__services-ind-projects-list--title">{{relatedProject.Title}}</p>
+                        </router-link>
+                    </li>
+                    <!-- <li class="cl__services-ind-projects-list--item">
+                        <router-link to="/project" class="cl__services-ind-projects-list--link">
+                            <img src="../../assets/Images/gmlm-highlights.png" alt="earth image" class="cl__services-ind-projects-list--img">           
+                            <div class="cl__services-ind-projects-list--about-cont">
+                                <span class="cl__services-ind-projects-list--about-span">View project</span>
+                                <img src="../../assets/Images/back.png" alt="arrow right" class="cl__services-ind-projects-list--arrow-img">
+                            </div>
+                            <p class="cl__services-ind-projects-list--title">GMLM highlights</p>
+                        </router-link>
+                    </li>
+                    <li class="cl__services-ind-projects-list--item">
+                        <router-link to="/project" class="cl__services-ind-projects-list--link">
+                            <img src="../../assets/Images/gmlm-highlights.png" alt="earth image" class="cl__services-ind-projects-list--img">           
+                            <div class="cl__services-ind-projects-list--about-cont">
+                                <span class="cl__services-ind-projects-list--about-span">View project</span>
+                                <img src="../../assets/Images/back.png" alt="arrow right" class="cl__services-ind-projects-list--arrow-img">
+                            </div>
+                            <p class="cl__services-ind-projects-list--title">GMLM highlights</p>
+                        </router-link>
+                    </li>
+                    <li class="cl__services-ind-projects-list--item">
+                        <router-link to="/project" class="cl__services-ind-projects-list--link">
+                            <img src="../../assets/Images/gmlm-highlights.png" alt="earth image" class="cl__services-ind-projects-list--img">           
+                            <div class="cl__services-ind-projects-list--about-cont">
+                                <span class="cl__services-ind-projects-list--about-span">View project</span>
+                                <img src="../../assets/Images/back.png" alt="arrow right" class="cl__services-ind-projects-list--arrow-img">
+                            </div>
+                            <p class="cl__services-ind-projects-list--title">GMLM highlights</p>
+                        </router-link>
+                    </li> -->
+                </ul>
+            </div>
+            <div class="cl__services-back-link-cont">
+                <router-link to="/services" class="cl__services-back-link">
+                    <img src="../../assets/Images/arrow-black.png" alt="arrow left" class="cl__services-back-link-img">
+                    <span class="cl__services-back-link-span">Capabilities</span>
+                </router-link>
+            </div>
+        </div>
+    </div>
+</div>

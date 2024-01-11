@@ -1,0 +1,35 @@
+<div class="cl__mobile-nav-cont" v-if="mobileView">
+    <a @click="openMenu" class="cl__popup-menu-link">
+        <span class="cl__popup-menu-span">Menu</span>
+        <div class="cl__ham-menu-cont">
+            <nav class="cl__ham-menu-toggle-cont">
+            <div class="cl__ham-menu-toggle--mobile" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            </nav>
+        </div>
+    </a>
+</div>
+<div class="cl__popout-menu" :class="menuClass">
+    <ul class="cl__main-nav-list">
+        <li class="cl__main-nav-list--item">
+            <router-link @click="closeMenu" to="/" class="cl__navBar-link">About</router-link>
+        </li>
+        <li class="cl__main-nav-list--item">
+            <router-link @click="closeMenu" to="/services" class="cl__navBar-link">Capabilities</router-link>
+        </li>
+        <li class="cl__main-nav-list--item">
+            <router-link @click="closeMenu" to="/showcase" class="cl__navBar-link">Showcase</router-link>
+        </li>
+        <li class="cl__main-nav-list--item">
+            <router-link @click="closeMenu" to="/contact" class="cl__navBar-link">Contact us</router-link>
+        </li>
+        <li class="cl__main-nav-list--item">
+            <a @click="closeMenu" href="https://web.yammer.com/main/groups/eyJfdHlwZSI6Ikdyb3VwIiwiaWQiOiIxMjgzNDcyNSJ9/new"  target="_blank" class="cl__navBar-link">Yammer</a>
+        </li>
+    </ul>
+    <a @click="closeMenu" class="cl__close-menu-link"></a>
+</div>

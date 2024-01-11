@@ -1,0 +1,32 @@
+<header id="clHeader" class="cl__header" :class="bgColor">    
+    <router-link to="/" class="cl__logo-cont">
+        <div alt="EY Logo" class="cl__ey-logo" :class="mobileLogo"></div>
+        <h1 class="cl__home-heading" :class="mobileHeading">Creative UK</h1>
+    </router-link>
+    <div v-if="!mobileView" class="cl__header-bottom">
+        <ul class="cl__navBar-list">    
+            <li class="cl__navBar-list--item">
+                <router-link @click="smoothScrollTo()" to="/" class="cl__navBar-link">About</router-link>
+                <div class="cl__navBar-hover"></div>
+            </li>
+            <li class="cl__navBar-list--item">
+                <router-link to="/services" class="cl__navBar-link">Capabilities</router-link>
+                <div class="cl__navBar-hover"></div>
+            </li>
+            <li class="cl__navBar-list--item">
+                <router-link to="/showcase" class="cl__navBar-link">Showcase</router-link>
+                <div class="cl__navBar-hover"></div>
+            </li>
+            <li class="cl__navBar-list--item">
+                <router-link to="/contact" class="cl__navBar-link">Contact us</router-link>
+                <div class="cl__navBar-hover"></div>
+            </li>
+            <li class="cl__navBar-list--item">
+                <a href="https://web.yammer.com/main/groups/eyJfdHlwZSI6Ikdyb3VwIiwiaWQiOiIxMjgzNDcyNSJ9/new" class="cl__navBar-link" target="_blank">
+                    <img src="../../assets/Images/yammer.png" alt="yammer" class="cl__navbar-yammer-img">
+                </a>
+                <div class="cl__navBar-hover"></div>
+            </li>
+        </ul>
+    </div>
+</header>

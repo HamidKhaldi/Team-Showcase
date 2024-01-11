@@ -1,0 +1,151 @@
+<div class="cl__showcase-wrapper">
+    <div class="cl__showcase-hero-cont">
+        <h1 class="cl__showcase-hero-heading">Showcase</h1>
+    </div>
+    <div class="cl__showcase-main-cont">
+        <ul class="cl__showcase-list">
+            <li v-for="project in showcaseProjects" class="cl__showcase-list--item animate__animated animate__fadeInUpBig">
+                <router-link @click="sendProjectData(project)" :to="{name: 'Project', params: {title: project.Title}}" class="cl__showcase-list--link">
+                    <img :src="project.Project_x002d_Thumbnail ? project.Project_x002d_Thumbnail.Url : null" alt="{{project.Title}}" class="cl__showcase-list--img">
+                    <div class="cl__showcase-list--service-tag">
+                        <span v-if="project.serviceNameArr.length > 1" class="cl__showcase-list--tag-span">Multi-Stream</span>
+                        <span v-if="project.serviceNameArr.length == 1" v-for="serviceName in project.serviceNameArr" class="cl__showcase-list--tag-span">{{serviceName}}</span>
+                    </div>
+                    <div class="cl__showcase-list--title-cont">
+                        <p class="cl__showcase-list--title-heading">{{project.Title}}</p> 
+                    </div>
+                    <div class="cl__showcase-list--project-desc-cont" v-if="!mobileView">
+                        <p class="cl__showcase-list--project-desc-para">{{project.Short_x002d_Summary ? project.Short_x002d_Summary : 'No Summary'}}</p>
+                        <img src="../../assets/Images/angle-right-yellow.png" alt="angle-right-yellow" class="cl__showcase-list--project-desc-icon">
+                    </div>  
+                </router-link>
+            </li>
+            <!-- <li class="cl__showcase-list--item">
+                <router-link to="/project" class="cl__showcase-list--link">
+                    <img src="../../assets/Images/grey-bg-1.png" alt="desert road" class="cl__showcase-list--img">
+                    <div class="cl__showcase-list--service-tag">
+                        <span class="cl__showcase-list--tag-span">Creative PowerPoint</span> 
+                    </div>
+                    <div class="cl__showcase-list--title-cont">
+                        <p class="cl__showcase-list--title-heading">Project Title</p> 
+                    </div>
+                    <div class="cl__showcase-list--project-desc-cont" v-if="!mobileView">
+                        <p class="cl__showcase-list--project-desc-para">Shortest summary ever as this selecting this option wil direct the user to the project page. That is where the ask, solution, photography, etc should reside!!</p>
+                        <img src="../../assets/Images/angle-right-yellow.png" alt="angle-right-yellow" class="cl__showcase-list--project-desc-icon">
+                    </div>  
+                </router-link>
+            </li>
+            <li class="cl__showcase-list--item">
+                <router-link to="/project" class="cl__showcase-list--link">
+                    <img src="../../assets/Images/grey-bg-1.png" alt="desert road" class="cl__showcase-list--img">
+                    <div class="cl__showcase-list--service-tag">
+                        <span class="cl__showcase-list--tag-span">Design and Creative</span> 
+                    </div>
+                    <div class="cl__showcase-list--title-cont">
+                        <p class="cl__showcase-list--title-heading">Project Title</p> 
+                    </div>
+                    <div class="cl__showcase-list--project-desc-cont" v-if="!mobileView">
+                        <p class="cl__showcase-list--project-desc-para">Shortest summary ever as this selecting this option wil direct the user to the project page. That is where the ask, solution, photography, etc should reside!!</p>
+                        <img src="../../assets/Images/angle-right-yellow.png" alt="angle-right-yellow" class="cl__showcase-list--project-desc-icon">
+                    </div>  
+                </router-link>
+            </li>
+            <li class="cl__showcase-list--item">
+                <router-link to="/project" class="cl__showcase-list--link">
+                    <img src="../../assets/Images/grey-bg-1.png" alt="desert road" class="cl__showcase-list--img">
+                    <div class="cl__showcase-list--service-tag">
+                        <span class="cl__showcase-list--tag-span">Film</span> 
+                    </div>
+                    <div class="cl__showcase-list--title-cont">
+                        <p class="cl__showcase-list--title-heading">Project Title</p> 
+                    </div>
+                    <div class="cl__showcase-list--project-desc-cont" v-if="!mobileView">
+                        <p class="cl__showcase-list--project-desc-para">Shortest summary ever as this selecting this option wil direct the user to the project page. That is where the ask, solution, photography, etc should reside!!</p>
+                        <img src="../../assets/Images/angle-right-yellow.png" alt="angle-right-yellow" class="cl__showcase-list--project-desc-icon">
+                    </div>  
+                </router-link>
+            </li>
+            <li class="cl__showcase-list--item">
+                <router-link to="/project" class="cl__showcase-list--link">
+                    <img src="../../assets/Images/grey-bg-1.png" alt="desert road" class="cl__showcase-list--img">
+                    <div class="cl__showcase-list--service-tag">
+                        <span class="cl__showcase-list--tag-span">Interactive</span> 
+                    </div>
+                    <div class="cl__showcase-list--title-cont">
+                        <p class="cl__showcase-list--title-heading">Project Title</p> 
+                    </div>
+                    <div class="cl__showcase-list--project-desc-cont" v-if="!mobileView">
+                        <p class="cl__showcase-list--project-desc-para">Shortest summary ever as this selecting this option wil direct the user to the project page. That is where the ask, solution, photography, etc should reside!!</p>
+                        <img src="../../assets/Images/angle-right-yellow.png" alt="angle-right-yellow" class="cl__showcase-list--project-desc-icon">
+                    </div>  
+                </router-link>
+            </li>
+            <li class="cl__showcase-list--item">
+                <router-link to="/project" class="cl__showcase-list--link">
+                    <img src="../../assets/Images/grey-bg-1.png" alt="desert road" class="cl__showcase-list--img">
+                    <div class="cl__showcase-list--service-tag">
+                        <span class="cl__showcase-list--tag-span">Photography</span> 
+                    </div>
+                    <div class="cl__showcase-list--title-cont">
+                        <p class="cl__showcase-list--title-heading">Project Title</p> 
+                    </div>
+                    <div class="cl__showcase-list--project-desc-cont" v-if="!mobileView">
+                        <p class="cl__showcase-list--project-desc-para">Shortest summary ever as this selecting this option wil direct the user to the project page. That is where the ask, solution, photography, etc should reside!!</p>
+                        <img src="../../assets/Images/angle-right-yellow.png" alt="angle-right-yellow" class="cl__showcase-list--project-desc-icon">
+                    </div>
+                </router-link>
+            </li>
+            <li class="cl__showcase-list--item">
+                <router-link to="/project" class="cl__showcase-list--link">
+                    <img src="../../assets/Images/grey-bg-1.png" alt="desert road" class="cl__showcase-list--img">
+                    <div class="cl__showcase-list--service-tag">
+                        <span class="cl__showcase-list--tag-span">Podcast</span> 
+                    </div>
+                    <div class="cl__showcase-list--title-cont">
+                        <p class="cl__showcase-list--title-heading">Project Title</p> 
+                    </div>
+                    <div class="cl__showcase-list--project-desc-cont" v-if="!mobileView">
+                        <p class="cl__showcase-list--project-desc-para">Shortest summary ever as this selecting this option wil direct the user to the project page. That is where the ask, solution, photography, etc should reside!!</p>
+                        <img src="../../assets/Images/angle-right-yellow.png" alt="angle-right-yellow" class="cl__showcase-list--project-desc-icon">
+                    </div>
+                </router-link>
+            </li>
+            <li class="cl__showcase-list--item">
+                <router-link to="/project" class="cl__showcase-list--link">
+                    <img src="../../assets/Images/web-project.png" alt="web-dev" class="cl__showcase-list--img">
+                    <div class="cl__showcase-list--service-tag">
+                        <span class="cl__showcase-list--tag-span">Web Development</span> 
+                    </div>
+                    <div class="cl__showcase-list--title-cont">
+                        <p class="cl__showcase-list--title-heading">Project Title</p> 
+                    </div>
+                    <div class="cl__showcase-list--project-desc-cont" v-if="!mobileView">
+                        <p class="cl__showcase-list--project-desc-para">Shortest summary ever as this selecting this option wil direct the user to the project page. That is where the ask, solution, photography, etc should reside!!</p>
+                        <img src="../../assets/Images/angle-right-yellow.png" alt="angle-right-yellow" class="cl__showcase-list--project-desc-icon">
+                    </div>
+                </router-link>
+            </li>
+            <li class="cl__showcase-list--item">
+                <router-link to="/project" class="cl__showcase-list--link">
+                    <img src="../../assets/Images/grey-bg-1.png" alt="desert road" class="cl__showcase-list--img">
+                    <div class="cl__showcase-list--service-tag">
+                        <span class="cl__showcase-list--tag-span">Webcast</span> 
+                    </div>
+                    <div class="cl__showcase-list--title-cont">
+                        <p class="cl__showcase-list--title-heading">Project Title</p> 
+                    </div>
+                    <div class="cl__showcase-list--project-desc-cont" v-if="!mobileView">
+                        <p class="cl__showcase-list--project-desc-para">Shortest summary ever as this selecting this option wil direct the user to the project page. That is where the ask, solution, photography, etc should reside!!</p>
+                        <img src="../../assets/Images/angle-right-yellow.png" alt="angle-right-yellow" class="cl__showcase-list--project-desc-icon">
+                    </div>
+                </router-link>
+            </li>    -->
+        </ul>
+        <div class="cl__services-back-link-cont" v-if="mobileView">
+            <a class="cl__services-back-link">
+                <span class="cl__services-back-link-span">Load more</span>
+                <img src="../../assets/Images/arrow-black.png" alt="arrow left" class="cl__services-back-link-img">                
+            </a>
+        </div>
+    </div>
+</div>   

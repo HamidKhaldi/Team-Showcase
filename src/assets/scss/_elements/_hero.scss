@@ -1,0 +1,34 @@
+//Generic hero class
+
+.cl__section-hero-cont{
+    display:flex;
+    flex-wrap: wrap;
+
+    @include mq($from: tablet){
+        padding-right: 6rem;
+    }
+}
+
+.cl__section-hero-img-cont{
+    flex-basis: 100%;
+
+    @include mq($from: tablet){
+        flex-basis: 65%;
+    }
+}
+
+.cl__section-hero-img{
+    width: 100%;
+}
+
+.cl__section-heading {
+    flex-basis: 100%;
+    margin: 0 0 2rem 3rem;
+    color: $eySharkGrey;
+    @include fontSize(44px);
+    font-family: EYInterstate-Light, sans-serif;
+
+    @include mq($from: desktop){
+        margin: 0 0 3rem 8rem;
+    }
+  }

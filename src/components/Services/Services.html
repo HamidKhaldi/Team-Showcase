@@ -1,0 +1,22 @@
+<div class="cl__services-wrapper">
+    <div class="cl__services-hero-cont">
+        <h1 class="cl__services-hero-heading">Capabilities</h1>
+    </div>
+    <div class="cl__services-main-cont">
+        <ul class="cl__services-list">
+            <li v-for="(service, key, index) in services" class="cl__services-list--item animate__animated animate__fadeInUpBig _{{index}}">
+                <router-link :to="{name: 'ServicesInd', params: {title: service.Title}}" @click="getServiceDetails(service)" class="cl__services-list--link">
+                    <img :src="service.Thumbnail ? service.Thumbnail.Url : null" alt="" class="cl__services-list--img">
+                    <div class="cl__services-list--service-tag">
+                        <span class="cl__services-list--tag-span">{{service.Title}}</span>
+                        <img src="../../assets/Images/close.png" alt="plus icon" class="cl__services-list--plus-icon">
+                    </div>
+                    <div class="cl__services-list--about-cont">
+                        <span class="cl__services-list--about-span">About</span>
+                        <img src="../../assets/Images/back.png" alt="arrow right" class="cl__services-list--arrow-img">
+                    </div>
+                </router-link>
+            </li>
+        </ul>
+    </div>   
+</div>

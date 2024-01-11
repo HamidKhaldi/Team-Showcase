@@ -1,0 +1,211 @@
+.cl__showcase-wrapper {
+    min-height: 100vh;
+    background-color: $eyOffWhite;
+    padding-top: 2rem;
+    @include mq($from: desktop){
+        padding-top: 10rem;
+    }
+}
+
+.cl__showcase-hero-cont{
+    display:flex;
+    flex-wrap: wrap;
+
+    @include mq($from: tablet){
+        padding-right: 6rem;
+    }
+    @include mq($from: desktop){
+        margin: 0;
+    }
+}
+
+.cl__showcase-hero-heading{
+    flex-basis: 100%;
+    margin: 0 1.5rem 2rem 1.5rem;
+    color: $eySharkGrey;
+    @include fontSize(36px);
+    font-family: EYInterstate-Light, sans-serif;
+
+    @include mq($from: desktop){
+        @include fontSize(44px);
+        margin: 0 0 3rem 8rem;
+    }
+}
+
+.cl__showcase-hero-img-cont{
+    flex-basis: 100%;
+
+    @include mq($from: tablet){
+        flex-basis: 65%;
+    }
+}
+
+.cl__showcase-hero-img{
+    width: 100%;
+}
+
+.cl__showcase-hero-intro-para{
+    flex-basis: 100%;
+    padding: 0 3rem;
+    font-family: EYInterstate-Regular, sans-serif;
+    @include fontSize(20px);
+    line-height: 1.4;
+
+    @include mq($from: tablet){
+        flex-basis: 35%;
+        margin-top: 129px;
+    }
+
+    @include mq($from: desktop){
+        padding: 2rem 1rem 0;
+        @include fontSize(26px);
+        line-height: 1.2;
+    }
+}
+
+.cl__showcase-main-cont{
+    padding: 0 1.5rem 6rem;
+    overflow: hidden;
+
+    @include mq($from: desktop){
+        padding: 0 8rem 2rem;
+    }
+}
+
+.cl__showcase-list{
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 0;
+
+    &--item{
+        position: relative;
+        background-color: $eySharkGrey;
+        flex-basis: 100%;
+        margin-bottom: .5rem;
+        height: auto;
+        margin-bottom: 5rem;
+        
+        @include mq($from: tablet){
+            flex-basis: 49%;
+            margin-right: 1%;
+            margin-bottom: 1%;
+        }
+
+        @include mq($from: desktopMid){
+            flex-basis: 32%;
+            margin-right: 1%;
+        }
+
+        &:hover{
+            .cl__showcase-list--project-desc-cont{
+                display: block;
+            }
+        }
+    }
+
+    &--img{
+        width: 100%;
+        height: auto;
+        transition: .7s;
+    }
+    
+    &--service-tag{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background-color: transparentize($eyOffBlack, $amount: .11) ;
+        color: $eyOffWhite;
+        padding: 5px 15px;   
+        text-align: center;
+        @include fontSize(16px);
+        z-index: 30;
+    }
+
+    &--tag-span{
+        display: block;
+    }
+    
+    &--title-cont{
+        color: $eyOffBlack;
+        padding: 1rem 0 2rem 0;     
+        width: 100%;
+        @include fontSize(18px);
+
+        @include mq($from: tablet){
+            background-color: transparentize($eyOffBlack, $amount: .33);
+            color: $white;
+            position: absolute;
+            top: 3rem;
+            padding: 1rem 0 2rem 1rem;
+        }
+    }
+
+    &--title-heading{
+        border-left: 3px solid $eyOffBlack;
+        padding-left: 10px;
+
+        @include mq($from: tablet){
+            border-left: 3px solid $eyYellow;
+        }
+    }
+
+    &--project-desc-cont{
+        position: absolute;
+        background-color: $eyOffBlack;                
+        top: 0;
+        height: 100%;
+        width: 100%;
+        padding: 2rem 4rem 2em 1.5rem;
+        transition: .7s ease-in-out;
+        z-index: 20;
+        display: none;    
+    }
+
+    &--project-desc-para{
+        color: $eyOffWhite;
+        line-height: 1.2;
+        @include fontSize(14px);
+        @include mq($from: desktopWide){
+            @include fontSize(16px);
+        }
+    }
+
+    &--project-desc-icon{
+        position: absolute;
+        right: 25px;
+        top: 43%;
+        width: 14px;
+    }
+
+}
+
+.cl__services-back-link-cont{
+    width: 50%;
+    margin: auto;
+    text-align: center; 
+    @include mq($from: tablet){
+        margin: 2.5rem auto 0; 
+    }
+    @include mq($from: desktop){
+        padding: 3rem 0;
+    }     
+}
+
+.cl__services-back-link-span{
+    display: block;
+    margin-bottom: 8px;
+}
+
+.cl__services-back-link-img{
+    width: 15px;
+}
+
+.animate__animated.animate__fadeInUpBig {
+    @for $x from 1 through 9 {
+        &:nth-child(#{$x}) {
+          animation-delay: 200ms * ($x - 1);
+        }
+    }
+}

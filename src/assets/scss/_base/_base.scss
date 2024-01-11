@@ -1,0 +1,68 @@
+#app {
+	width: 100vw;
+	height: 100vh;
+	background: $white;
+	font-family: EYInterstate-Light, sans-serif;
+	@include fontSize(16px);
+	color: $eyOffBlack;
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+	text-rendering: optimizelegibility;
+	position: relative;
+	overflow-x: hidden;
+
+	a{
+		text-decoration: none;
+		cursor: pointer;
+	}
+	
+	
+	/* scrollbar */
+
+	  /* width */
+	::-webkit-scrollbar {
+		width: 4px;
+	} 
+  
+	/* Track */
+	::-webkit-scrollbar-track {
+		box-shadow: inset 0 0 5px grey; 
+		border-radius: 10px;
+	}
+   
+	/* Handle */
+	::-webkit-scrollbar-thumb {
+		background:$eyPrimaryGray; 
+		border-radius: 10px;
+	}
+  
+	/* Handle on hover */
+	::-webkit-scrollbar-thumb:hover {
+		background: $eyPrimaryGray; 
+	}
+
+	.rotate-icon{
+		transform: rotate(90deg);
+	}
+
+	.hide-asset{
+		display: none;
+	}
+
+	.disabled{
+		opacity: .35 !important;
+		cursor: none;
+	} 
+
+	.btn-disabled{
+		background-color: $eySharkGrey; 
+		cursor: none;
+		// &:hover{
+		// 	color: $eyOffBlack !important;
+		// }
+	}
+	
+
+}
+
+	

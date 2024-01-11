@@ -1,0 +1,447 @@
+.cl__contact-wrapper{
+    background-color: $eyOffWhite;
+    padding-top: 2rem;
+    @include mq($from: desktop){
+        min-height: 100vh;
+        padding-top: 10rem;
+    }
+}
+
+.cl__contact-hero-cont{
+    display:flex;
+    flex-wrap: wrap;
+
+    @include mq($from: tablet){
+        padding-right: 6rem;
+    }
+}
+
+.cl__contact-hero-heading{
+    flex-basis: 100%;
+    margin: 2rem 0 2rem 1.5rem;
+    color: $eySharkGrey;
+    @include fontSize(36px);
+    font-family: EYInterstate-Light, sans-serif;
+
+    @include mq($from: desktop){
+        @include fontSize(44px);
+        margin: 0 0 3rem 8rem;
+    }
+}
+
+.cl__contact-hero-img-cont{
+    flex-basis: 100%;
+
+    @include mq($from: tablet){
+        flex-basis: 65%;
+    }
+}
+
+.cl__contact-hero-img{
+    width: 100%;
+}
+
+.cl__contact-hero-intro-para{
+    flex-basis: 100%;
+    padding: 2rem 1.5rem 0;
+    font-family: Georgia,sans-serif;
+    font-size: 20px;
+    font-size: 1.25rem;
+    line-height: 1.4;
+
+    @include mq($from: tablet){
+        flex-basis: 35%;
+        margin-top: 3rem;
+        padding: 0 1.5rem;
+    }
+
+    @include mq($from: desktop){
+        padding: 2rem 1rem 0;
+        margin-top: 55px;
+        @include fontSize(26px);
+        line-height: 1.2;
+    }
+
+    @include mq($from: desktopMid){
+        @include fontSize(30px);
+    }
+    @include mq($from: desktopWide){
+        max-width: 465px;
+        margin-top: 75px;
+        @include fontSize(30px);
+    }
+}
+
+.cl__contact-main-cont{
+    padding: 3rem 1.5rem 0;
+
+    @include mq($from: tablet){
+        padding: 6rem 1.5rem 0;
+    }
+
+    @include mq($from: desktop){
+        padding: 3rem 6rem;
+    }
+}
+
+.cl__contact-list-span{
+    font-family: EYInterstate-Bold, sans-serif;
+}
+
+.cl__contact-list{
+    margin-top: 1rem;
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    &--item{
+        position: relative;
+        flex-basis: 100%;
+        //height: 16rem;
+        padding: 4rem 2rem;
+        margin-bottom: 6rem;
+
+        @include mq($from: tablet){
+            flex-basis: 49.5%;
+            height: 16rem;
+            margin-bottom: 1rem;
+        }
+
+    }
+
+    &--query-item{
+        background-color: transparentize($eySharkGrey, $amount: 0.8) ;
+    }
+
+    &--heading{
+        color: $eyOffBlack;
+        @include fontSize(22px);
+        font-family: EYInterstate-Light, sans-serif;
+        position: absolute;
+        top: -40px;
+        left: 0;
+    }
+
+    &-email-form {
+        color: $black;
+        @include fontSize(16px);
+        font-family: EYInterstate-Light, sans-serif;
+    }
+
+    &--textbox {
+        width: 100px;
+        color: $black;
+        background: none;
+        border: 0px none;
+        font-family: EYInterstate-Bold, sans-serif;
+        &:focus {
+            border: 0px none;
+        }
+    }
+
+    &--textarea {
+        margin-bottom: -32px;
+        width: 170px;
+        max-height: 51px;
+        color: $eyOffBlack;
+        background: none;
+        border: 0px none;
+        font-family: EYInterstate-Bold, sans-serif;
+        &:focus {
+            border: 0px none;
+        }
+    }
+
+    &--send-btn{
+        text-decoration: none;
+        display: block;
+        padding: 6px 20px;
+        margin-top: 1rem;
+        background-color: $eyOffBlack;
+        color: $eyOffWhite !important;
+        font-family: EYInterstate-Light, sans-serif;
+        border-radius: 5px;
+        text-align: center;
+        width: 90px;
+        @include fontSize(16px);
+
+        &:hover{
+            background-color: $eyYellow;
+            color: $eyOffBlack !important;
+        }
+    }
+
+    &--polaris-item{
+        background-image: url('../../assets/Images/polaris-1.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    &--polaris-btn{
+        display: block;
+        padding: 6px 20px;
+        margin-top: 2rem;
+        background-color: $eyOffBlack;
+        color: $eyOffWhite;
+        border-radius: 5px;
+        text-align: center;
+        width: 140px;
+        @include fontSize(16px);
+
+        &:hover{
+            background-color: $eyYellow;
+            color: $eyOffBlack !important;
+        }
+    }
+}
+
+// .cl__contact-footer-cont{
+//     position: relative;
+//     overflow: hidden;
+
+//     @include mq($from: tablet){
+//         height: 17rem;
+//     }
+//     @include mq($from: desktopMid){
+//         height: 15rem;
+//     }
+//     @include mq($from: desktopWide){
+//         height: 14rem;
+//     }
+
+// }
+
+// .cl__contact-leadership-cont{    
+//     transition: .7s;
+//     width: 100%;
+//     height: 100%;
+
+//     @include mq($from: tablet){
+//         bottom: 0%;
+//         position: absolute;
+//         left: 0;
+//         right: 0;
+//     }
+
+//     @include mq($from: desktop){
+//         bottom: -70%;
+//     }
+//     @include mq($from: desktopMid){
+//         bottom: -65%;
+//     }
+//     @include mq($from: desktopWide){
+//         bottom: -64%;
+//     }
+
+
+// }
+
+// .show-list{
+//     bottom: 0;
+// }
+
+.cl__contact-leadership-link{
+    text-decoration: none;
+    display: block;
+    width: 180px;
+    background-color: $eyOffBlack;
+    color: $white !important;
+    font-family: EYInterstate-Light, sans-serif;
+    @include fontSize(16px);
+    margin: 0 auto;
+    text-align: center;
+    padding: 7px 15px;
+    margin-bottom: 0;
+
+    &:hover{
+        color: $white;
+    }
+}
+
+.cl__contact-leadership-icon{
+    text-decoration: none;
+    @include fontSize(22px);
+    color: $white;
+    margin-left: 6px;
+    margin-bottom: -3px;
+
+    &:hover{
+        color: $white;
+    }
+}
+
+.cl__contact-leadership-list-cont{
+    @include mq($until: desktop){
+        padding: 0rem 1.5rem 3rem;
+    }
+    
+    @include mq($from: desktop){
+        padding: 0rem 6rem 3rem;
+    }   
+}
+
+.cl__contact-leadership-list{
+    // width: 94%;
+    background-color: $eyOffBlack;
+    padding: 6rem;
+    margin: 0 auto;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; 
+
+    @include mq($from: tablet){
+        padding: 3rem 6rem;
+    }
+
+    &--item{
+        color: $white;
+        flex-basis: 100%;
+        margin-bottom: 1rem;
+        text-align: center;
+
+        @include mq($from: tablet){
+            flex-basis: 32%;
+        }
+    }
+}
+
+.cl__contact-leadership-details-list{
+    list-style: none;
+    padding: 0 0 1rem 0;
+
+    &--item{
+        font-family: EYInterstate-Light, sans-serif;
+        @include fontSize(16px);
+        &:first-child{
+            font-family: EYInterstate-Regular, sans-serif;
+            @include fontSize(18px);
+        }
+    }
+
+    &--email{
+        text-decoration: none;
+        color: $white;
+        &:hover{
+            color: $eyYellow;
+            text-decoration: underline;
+        }
+    }
+}
+
+.hide-container{
+    display: none;
+}
+
+.cl__contact__error-cont{
+    position: absolute;
+}
+
+.cl__contact-error-list{
+    list-style: none;
+    padding: 0;
+    margin-top: -60px;
+    margin-bottom: 10px;
+
+    &--item{
+        line-height: 1;
+        color: $eyRed;
+        @include fontSize(14px);
+    }
+}
+
+.animate__animated.animate__fadeInUp, .animate__animated.animate__bounceInUp{
+	--animate-duration: 2s;
+}
+
+// .go-down {
+//     height: 60px;
+//     width: 60px;
+//     border-radius: 50%;
+//     background: $eyGrayDark;
+//     display: none;
+//     justify-content: center;
+//     align-items: center;
+//     text-align: center;
+//     position: fixed;
+//     bottom: 70px;
+//     right: 70px;
+//     color: #fff;
+//     box-shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 3px 6px rgba(0, 0, 0, .23);
+//     font-size: 30px;
+// 	transform: rotate(90deg);
+//     cursor: pointer;
+
+// 	@include mq($from: desktop){
+// 		display: flex;
+// 	}
+
+// 	@include mq($from: desktopWide){
+// 		display: none;
+// 	}
+// }
+
+// .bounce {
+//     -moz-animation: bounce 2s infinite;
+//     -webkit-animation: bounce 2s infinite;
+//     animation: bounce 2s infinite;
+// }
+
+// .cl__scroll-down-icon{
+// 	color: $eyOffWhite !important;
+// 	transform: rotate(90deg);
+// 	margin-top: 14px !important;	
+// }
+
+// @-moz-keyframes bounce {
+//     0%, 20%, 50%, 80%, 100% {
+//         -moz-transform: translateY(0);
+//         transform: translateY(0);
+//     }
+//     40% {
+//         -moz-transform: translateY(-30px);
+//         transform: translateY(-30px);
+//     }
+//     60% {
+//         -moz-transform: translateY(-15px);
+//         transform: translateY(-15px);
+//     }
+//     }
+// @-webkit-keyframes bounce {
+//     0%, 20%, 50%, 80%, 100% {
+//         -webkit-transform: translateY(0);
+//         transform: translateY(0);
+//     }
+//     40% {
+//         -webkit-transform: translateY(-30px);
+//         transform: translateY(-30px);
+//     }
+//     60% {
+//         -webkit-transform: translateY(-15px);
+//         transform: translateY(-15px);
+//     }
+// }
+// @keyframes bounce {
+//     0%, 20%, 50%, 80%, 100% {
+//         -moz-transform: translateY(0);
+//         -ms-transform: translateY(0);
+//         -webkit-transform: translateY(0);
+//         transform: translateY(0);
+//     }
+//     40% {
+//         -moz-transform: translateY(-30px);
+//         -ms-transform: translateY(-30px);
+//         -webkit-transform: translateY(-30px);
+//         transform: translateY(-30px);
+//     }
+//     60% {
+//         -moz-transform: translateY(-15px);
+//         -ms-transform: translateY(-15px);
+//         -webkit-transform: translateY(-15px);
+//         transform: translateY(-15px);
+//     }
+// }
+  
