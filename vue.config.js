@@ -1,7 +1,4 @@
 module.exports = {
-  // devServer: {
-  //   proxy: "https://eygb.sharepoint.com/sites/Creative-UK",
-  // },
   css: {
     loaderOptions: {
       sass: {
